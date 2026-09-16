@@ -1,0 +1,283 @@
+/* Page Frame Container */
+.help-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 0 100px 0;
+  background-color: #07090e;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: #ffffff;
+}
+
+.help-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Badging */
+.help-page .help-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.help-page .category-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #06b6d4;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  width: fit-content;
+}
+
+.help-page .pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #06b6d4;
+}
+
+.help-page .help-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.help-page .highlight-cyan {
+  background: linear-gradient(135deg, #06b6d4, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tabs Navigation */
+.help-page .help-menu {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 32px;
+}
+
+.help-page .table_list .MuiTabs-flexContainer {
+  gap: 24px;
+}
+
+.help-page .table_list .MuiTab-root {
+  color: #64748b !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1px !important;
+  padding: 12px 16px !important;
+  transition: all 0.2s ease !important;
+}
+
+.help-page .table_list .MuiTab-root.Mui-selected {
+  color: #06b6d4 !important;
+}
+
+.help-page .table_list .MuiTabs-indicator {
+  background-color: #06b6d4 !important;
+  height: 3px !important;
+  border-radius: 3px 3px 0 0 !important;
+  box-shadow: 0 0 10px #06b6d4 !important;
+}
+
+/* Tab Content Overrides */
+.help-page .tab-panel-custom {
+  padding: 0 !important;
+}
+
+/* TAB 1: Terms of Service Cards */
+.help-page .rules-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.help-page .term-item-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px;
+  transition:
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.help-page .term-item-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  transform: translateX(4px);
+}
+
+.help-page .term-index {
+  color: #06b6d4;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: rgba(6, 182, 212, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.help-page .term-text {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* TAB 2: Cyber Accordions */
+.help-page .accordion-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.help-page .cyber-accordion {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.help-page .cyber-accordion::before {
+  display: none !important;
+}
+
+.help-page .cyber-accordion.Mui-expanded {
+  border-color: rgba(6, 182, 212, 0.5) !important;
+}
+
+.help-page .accordion-summary {
+  padding: 8px 24px !important;
+}
+
+.help-page .faq-question {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+}
+
+.help-page .accordion-details {
+  padding: 0 24px 24px 24px !important;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.help-page .faq-answer {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  padding-top: 16px;
+}
+
+/* TAB 3: Contact Form Panel */
+.help-page .admin-letter-box {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 720px;
+}
+
+.help-page .admin-letter-header {
+  margin-bottom: 28px;
+}
+
+.help-page .letter-title {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.help-page .letter-subtitle {
+  color: #64748b;
+  font-size: 0.88rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.help-page .admin-letter-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.help-page .admin-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.help-page .admin-input-box label {
+  color: #06b6d4;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.help-page .cyber-input,
+.help-page .cyber-textarea {
+  width: 100%;
+  background-color: #07090e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.help-page .cyber-input:focus,
+.help-page .cyber-textarea:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.help-page .cyber-textarea {
+  resize: vertical;
+}
+
+.help-page .submit-btn {
+  background: linear-gradient(135deg, #06b6d4, #0284c7) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-family: "JetBrains Mono", monospace !important;
+  padding: 10px 28px !important;
+  border-radius: 10px !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3) !important;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.help-page .submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5) !important;
+}

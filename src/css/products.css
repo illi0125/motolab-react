@@ -1,0 +1,1093 @@
+.products-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #05080f;
+  background-image: 
+    /* Subtle HUD Grid Lines */
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    /* Deep Ambient Radial Orbs */
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(6, 182, 212, 0.12) 0%,
+        transparent 40%
+      ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(139, 92, 246, 0.1) 0%,
+      transparent 45%
+    );
+  background-size:
+    40px 40px,
+    40px 40px,
+    100% 100%,
+    100% 100%;
+  background-attachment: fixed;
+  color: #ffffff;
+  overflow: hidden;
+}
+/** Products **/
+/* Container & Base Stack */
+.catalog-container {
+  max-width: 1280px !important;
+  margin: 0 auto;
+  padding: 40px 16px 80px;
+}
+
+.catalog-stack {
+  width: 100%;
+}
+
+/* Search & Hero Header */
+.search-hero-box {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #333;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.5px;
+}
+
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 6px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.search-bar-wrapper:focus-within {
+  border-color: #06b6d4;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
+
+.search-submit-btn {
+  background: #06b6d4 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+}
+
+.search-submit-btn:hover {
+  background: #22d3ee !important;
+}
+
+/* Sorting Control Row */
+.sorting-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sorting-label {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sorting-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.sort-btn {
+  background: #111827 !important;
+  color: #9ca3af !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: 6px !important;
+  padding: 6px 14px !important;
+  box-shadow: none !important;
+}
+
+.sort-btn.active {
+  background: rgba(6, 182, 212, 0.15) !important;
+  color: #06b6d4 !important;
+  border-color: rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Category Pills Bar */
+.catalog-main-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.categories-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-pill {
+  background: #111827 !important;
+  color: #d1d5db !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  padding: 8px 20px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.category-pill.active {
+  background: #06b6d4 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3) !important;
+}
+
+/* Product Cards Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.bike-card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.bike-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.25);
+}
+
+/* Card Media Header */
+.card-media {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+.spec-badge {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-family: monospace;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.overlay-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-btn {
+  min-width: unset !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  background: rgba(6, 182, 212, 0.9) !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease !important;
+}
+
+.cart-btn:hover {
+  transform: scale(1.1);
+  background: #22d3ee !important;
+}
+
+.cart-btn img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0);
+}
+
+.views-badge {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+/* Card Body Footer */
+.card-info {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111827;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bike-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.bike-price-tag {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+/* Empty State */
+.no-data-card {
+  grid-column: 1 / -1;
+  background: #111827;
+  border: 1px border-dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.no-data-card h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+/* Pagination Styling */
+.pagination-wrapper {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-wrapper .MuiPaginationItem-root {
+  color: #9ca3af;
+  border-radius: 8px;
+}
+
+.pagination-wrapper .MuiPaginationItem-root.Mui-selected {
+  background-color: #06b6d4 !important;
+  color: #000000 !important;
+  font-weight: 800;
+}
+/* BRANDS SECTION */
+/* Brands Section Outer Wrapper */
+.brands-section {
+  background-color: #0b0f17;
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brands-section .brands-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.brands-section .brands-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.brands-section .brands-badge {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.brands-section .brands-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.brands-section .brands-subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin: 0 auto;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Brands Grid Layout */
+.brands-section .brands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .brands-section .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .brands-section .brands-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Brand Card */
+.brands-section .brand-card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-section .brand-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(6, 182, 212, 0.15) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.brands-section .brand-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.3);
+}
+
+.brands-section .brand-card:hover::before {
+  opacity: 1;
+}
+
+/* Expanded Image Wrapper */
+.brands-section .brand-img-wrapper {
+  width: 100%;
+  height: 250px; /* Increased height for full visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* High Visibility Image Styling */
+.brands-section .brand-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Fills full container cleanly; switch to 'contain' if logos require full uncropped fit */
+  border-radius: 8px;
+  opacity: 0.9;
+  filter: brightness(0.95) contrast(1.05);
+  transition: all 0.3s ease;
+}
+
+.brands-section .brand-card:hover .brand-img-wrapper img {
+  opacity: 1;
+  filter: brightness(1.1) contrast(1.1);
+  transform: scale(1.04);
+}
+
+/** ADVERTISEMENT **/
+
+.ads-restaurant-frame {
+  width: 100%;
+  height: 693px;
+  display: flex;
+  overflow: hidden;
+  transform: perspective(0px);
+  box-shadow: -3px 0px 20px 14px #34343480;
+}
+
+.ads-restaurant-frame .ads-video {
+  width: 100%;
+  background: #0c0e12;
+  display: flex;
+  box-shadow: 0px -8px 90px rgb(215 215 255);
+  transform: scale(1.5);
+  overflow: hidden;
+}
+
+/* ADDRESS SECTION */
+/* Section Outer Wrapper */
+.address-section {
+  background-color: #0b0f17;
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.address-section .address-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.address-section .address-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.address-section .address-badge {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.address-section .address-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.address-section .address-subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin: 0 auto;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+/* Map Wrapper (Replaces fixed 1320px width with 100% responsive fluid height) */
+.address-section .map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.address-section .map-wrapper:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+/* Map iframe styling */
+.address-section .map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(80%) invert(90%) hue-rotate(180deg) contrast(0.9);
+  transition: filter 0.4s ease;
+}
+
+/* Restores full original map color on hover */
+.address-section .map-wrapper:hover iframe {
+  filter: grayscale(0%) invert(0%) hue-rotate(0deg) contrast(1);
+}
+
+@media (max-width: 768px) {
+  .address-section .map-wrapper {
+    height: 350px;
+  }
+}
+
+.products-page {
+  .products {
+    .about-left {
+      .about-left-desc {
+        padding: 20px;
+        width: 100%;
+        height: 329px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 90.88%);
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .about-left-desc {
+      span {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 42px;
+        color: #f8f8ff;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .brands-logo {
+      .about-right {
+        margin-left: 20px;
+        width: 50%;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .about-left-desc {
+      p {
+        margin-top: 10px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #d4d4d4;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .about-right {
+      .about-right-img {
+        width: 160px;
+        height: 140px;
+        left: 763px;
+        top: 3653px;
+        display: flex;
+        border-radius: 0px 50px 0px 0px;
+        background: url("https://i0.wp.com/educationplanetonline.com/wp-content/uploads/2022/03/Culinary-Schools-in-Europe-1.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .about-right {
+      .about-right-desc {
+        padding-bottom: 5px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .about-right-desc {
+      span {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #f8f8ff;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .about-right-desc {
+      p {
+        margin-top: 10px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #d4d4d4;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .swiper-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .dishes-filter-section {
+      margin-top: 65px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .dishes-filter-box {
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .dishes-filter-box {
+      .order {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .list-category-section {
+      width: 100%;
+      min-height: 600px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .product-category {
+      margin-top: 60px;
+      width: 50px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.products-page {
+  .product-category {
+    .category-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+    }
+  }
+}
+
+.products-page {
+  .product-category {
+    .category-main {
+      button {
+        min-width: auto;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.products-page {
+  .products {
+    .css-1p7b7rs-MuiBadge-badge {
+      position: absolute;
+      top: 26%;
+      right: 15%;
+    }
+  }
+}
+
+/** CHOSENPRODUCT **/
+
+/* Container & Base Styles */
+.chosen-motorcycle-page {
+  background-color: #0b0f17;
+  color: #ffffff;
+  padding: 40px 0 80px;
+  min-height: 100vh;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.chosen-motorcycle-page .detail-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.chosen-motorcycle-page .detail-header {
+  margin-bottom: 24px;
+}
+
+.chosen-motorcycle-page .header-tag {
+  color: #06b6d4;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.chosen-motorcycle-page .header-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Grid Layout */
+.chosen-motorcycle-page .detail-content-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .chosen-motorcycle-page .detail-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Image Slider Styling */
+.chosen-motorcycle-page .slider-wrapper {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.chosen-motorcycle-page .motorcycle-swiper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chosen-motorcycle-page .image-slide-container {
+  width: 100%;
+  height: 420px;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.chosen-motorcycle-page .slide-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Custom Swiper Arrow Color Overrides */
+.chosen-motorcycle-page .swiper-button-next,
+.chosen-motorcycle-page .swiper-button-prev {
+  color: #06b6d4 !important;
+  background: rgba(0, 0, 0, 0.6);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.chosen-motorcycle-page .swiper-button-next:after,
+.chosen-motorcycle-page .swiper-button-prev:after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+/* Info Card Styling */
+.chosen-motorcycle-page .info-card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chosen-motorcycle-page .info-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.chosen-motorcycle-page .bike-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+.chosen-motorcycle-page .views-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #06b6d4;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Rating Row */
+.chosen-motorcycle-page .rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chosen-motorcycle-page .rating-score {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+/* Dealer Box */
+.chosen-motorcycle-page .dealer-info-box {
+  background: #1f2937;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chosen-motorcycle-page .dealer-label {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: #06b6d4;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chosen-motorcycle-page .dealer-detail {
+  font-size: 0.88rem;
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+/* Description Section */
+.chosen-motorcycle-page .description-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chosen-motorcycle-page .section-title {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #9ca3af;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chosen-motorcycle-page .description-text {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Action Footer */
+.chosen-motorcycle-page .action-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.chosen-motorcycle-page .price-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chosen-motorcycle-page .price-label {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.chosen-motorcycle-page .price-value {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.chosen-motorcycle-page .add-to-cart-btn {
+  background: #06b6d4 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+  padding: 12px 28px !important;
+  border-radius: 8px !important;
+  text-transform: uppercase !important;
+  transition: all 0.2s ease !important;
+}
+
+.chosen-motorcycle-page .add-to-cart-btn:hover {
+  background: #22d3ee !important;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4) !important;
+}

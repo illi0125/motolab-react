@@ -1,0 +1,825 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap");
+
+/* MAIN HERO WRAPPER */
+.home-navbar {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  background-color: #07090e;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 1. HIGH-SPEED MOTORCYCLE HERO BACKGROUND IMAGE */
+.home-navbar .hero-bg-image {
+  position: absolute;
+  inset: 0;
+  /* Unsplash high-resolution futuristic superbike imagery */
+  background-image: url("/img/IMG_1320.PNG");
+  background-size: cover;
+  background-position: center right;
+  filter: contrast(110%) brightness(75%);
+  z-index: 0;
+  transition: transform 10s ease;
+}
+
+/* Dynamic Hover Zoom effect on image background */
+.home-navbar:hover .hero-bg-image {
+  transform: scale(1.03);
+}
+
+/* INNER CONTAINER */
+.home-navbar .nabvar-container {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  height: 100%;
+}
+
+/* TOP MENU BAR (GLASSMORPHIC HUD CARD) */
+.home-navbar .nabvar-container .menu {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background: rgba(13, 17, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* BRAND LOGO HUD CONTAINER */
+.home-navbar .brand-logo-link {
+  text-decoration: none;
+}
+
+.home-navbar .brand-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px 6px 8px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: all 0.35s ease;
+}
+
+.home-navbar .logo-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.9) 0%,
+    rgba(239, 68, 68, 0) 70%
+  );
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.home-navbar .brand-text-badge {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.home-navbar .brand-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.home-navbar .cyan-accent {
+  color: #06b6d4;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+}
+
+.home-navbar .brand-sub {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #ef4444;
+  margin-top: 3px;
+}
+
+.home-navbar .brand-logo-container:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+.home-navbar .brand-logo-container:hover .brand-logo {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* NAVIGATION LINKS */
+.home-navbar .nabvar-container .menu .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-navbar a {
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  transition: color 0.25s ease;
+}
+
+.home-navbar .hover-line {
+  position: relative;
+  padding: 6px 0;
+}
+
+.home-navbar .hover-line a:hover {
+  color: #ffffff;
+}
+
+.home-navbar .underline {
+  color: #06b6d4 !important;
+  font-weight: 800;
+}
+
+.home-navbar .underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #06b6d4, #ef4444);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+}
+
+/* BUTTONS & AVATAR */
+.home-navbar .login-button {
+  background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%) !important;
+  color: #000000 !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-weight: 800 !important;
+  font-size: 0.8rem !important;
+  padding: 8px 22px !important;
+  border-radius: 50px !important;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.home-navbar .login-button:hover {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.7) !important;
+  transform: translateY(-1px);
+}
+
+.home-navbar .user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #06b6d4;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+  cursor: pointer;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.home-navbar .user-avatar:hover {
+  transform: scale(1.08);
+  border-color: #ef4444;
+}
+
+/* HERO SECTION CONTENT */
+.home-navbar .nabvar-container .header-frame {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-navbar .nabvar-container .header-frame .detail {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-navbar .badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  width: fit-content;
+  border-radius: 100px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.home-navbar .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.home-navbar .head-main-txt {
+  font-size: 3.6rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.home-navbar .highlight-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-navbar .wel-txt {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.home-navbar .service-txt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #06b6d4;
+  margin-bottom: 40px;
+}
+
+.home-navbar .signup-button {
+  width: 240px !important;
+  height: 56px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.home-navbar .signup-button:hover {
+  box-shadow: 0 0 35px rgba(239, 68, 68, 0.7) !important;
+  transform: translateY(-2px);
+}
+
+/* OtherNavbar Container */
+.other-navbar {
+  position: relative;
+  width: 100%;
+  padding: 16px 0;
+  color: #ffffff;
+  height: 400px;
+  display: flex;
+  background: url("/img/IMG_1320.PNG");
+  background-size: cover;
+}
+
+/* Compact Floating Glass Pill Bar for Inner Pages */
+.floating-navbar-other {
+  position: sticky;
+  top: 12px;
+  z-index: 1000;
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  padding: 8px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.other-navbar .nabvar-container {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.other-navbar .menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Brand Section */
+.other-navbar .brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.other-navbar .brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.other-navbar .brand-title-moto {
+  color: #ffffff;
+}
+
+.other-navbar .brand-title-lab {
+  background: linear-gradient(135deg, #06b6d4, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.other-navbar .live-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.other-navbar .pulse-indicator {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.other-navbar .status-label {
+  font-size: 0.65rem;
+  color: #06b6d4;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+/* Navigation Links */
+.other-navbar .links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 18px;
+}
+
+.other-navbar .hover-line a {
+  position: relative;
+  text-decoration: none;
+  color: #8a8f9e;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  transition: color 0.25s ease;
+}
+
+.other-navbar .hover-line a:hover {
+  color: #ffffff;
+}
+
+.other-navbar .hover-line a.underline {
+  color: #06b6d4;
+}
+
+.other-navbar .hover-line a.underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: #06b6d4;
+  box-shadow: 0 0 8px #06b6d4;
+  border-radius: 2px;
+}
+
+/* Telemetry Indicator Pill */
+.other-navbar .telemetry-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #06b6d4;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+/* Action Controls & Buttons */
+.other-navbar .login-button.glow-cyan-btn {
+  background: linear-gradient(135deg, #06b6d4, #0284c7) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 6px 20px !important;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.other-navbar .login-button.glow-cyan-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5) !important;
+}
+
+.other-navbar .avatar-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, #06b6d4, #ef4444);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.other-navbar .avatar-wrapper:hover {
+  transform: scale(1.08);
+}
+
+.other-navbar .user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #07090e;
+}
+
+/* Dropdown Menu Styles */
+.cyber-dropdown-paper {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.logout-menu-item {
+  color: #ef4444 !important;
+  font-weight: 700 !important;
+}
+
+/* BASKET */
+/* MotoLab Basket Styles */
+.motolab-basket-root {
+  display: flex;
+  align-items: center;
+}
+
+.basket-trigger-btn {
+  padding: 8px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.basket-trigger-btn:hover {
+  transform: scale(1.08);
+}
+
+.basket-cart-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.4));
+}
+
+.basket-badge .MuiBadge-badge {
+  background-color: #06b6d4 !important;
+  color: #07090e !important;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  font-size: 0.7rem;
+  box-shadow: 0 0 8px #06b6d4;
+}
+
+/* Basket Menu Box */
+.basket-frame {
+  width: 360px;
+  max-width: 90vw;
+  padding: 4px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* Menu Header */
+.basket-frame .all-check-box {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f172a;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.basket-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #06b6d4;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.basket-header-title .pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #06b6d4;
+}
+
+.basket-empty-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.clear-all-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.clear-all-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+/* Main Items Wrapper */
+.basket-frame .orders-main-wrapper {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.basket-frame .orders-main-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.basket-frame .orders-main-wrapper::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 4px;
+}
+
+.basket-empty-body {
+  padding: 30px 16px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.basket-frame .orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Cart Item Box */
+.basket-frame .basket-info-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #07090e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 0.2s ease;
+}
+
+.basket-frame .basket-info-box:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.basket-frame .cancel-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.basket-frame .cancel-btn:hover {
+  color: #ef4444;
+}
+
+.item-thumb-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0f172a;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.item-thumb-container .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.item-details .product-name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 14px;
+}
+
+.product-price-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+}
+
+.product-price-tag .unit-val {
+  color: #06b6d4;
+  font-weight: 700;
+}
+
+.product-price-tag .multiplier {
+  color: #64748b;
+}
+
+.product-price-tag .qty-val {
+  color: #94a3b8;
+}
+
+/* Quantity Controls */
+.qty-control-box {
+  display: flex;
+  align-items: center;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.qty-control-box button {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.qty-control-box button:hover {
+  background: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
+}
+
+.qty-control-box .qty-display {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 0 6px;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Basket Order Footer */
+.basket-frame .basket-order {
+  padding: 14px 16px;
+  background: #0f172a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.basket-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.price-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.breakdown-label {
+  color: #64748b;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.breakdown-val {
+  color: #94a3b8;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.total-price-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.total-label {
+  color: #06b6d4;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.total-price-display .price {
+  color: #ffffff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.checkout-btn {
+  background: linear-gradient(135deg, #06b6d4, #0284c7) !important;
+  color: #ffffff !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-weight: 800 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 1px !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5) !important;
+}

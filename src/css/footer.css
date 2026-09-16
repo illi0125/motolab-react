@@ -1,0 +1,202 @@
+/* Isolated Outer Footer Container */
+.footer-frame {
+  position: relative;
+  width: 100%;
+  background-color: #05070a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 60px 0 24px 0;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  color: #8a8f9e;
+}
+
+/* Main Multi-Column Grid Layout */
+.footer-frame .footer-main-content {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.2fr;
+  gap: 48px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .footer-frame .footer-main-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Brand Column */
+.footer-frame .footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-frame .footer-logo-box .logo-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-frame .highlight-cyan {
+  background: linear-gradient(135deg, #06b6d4, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-frame .foot-desc-txt {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 360px;
+}
+
+/* SNS Social Links */
+.footer-frame .sns-context {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer-frame .sns-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8f9e;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-frame .sns-link:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: #06b6d4;
+  color: #06b6d4;
+  transform: translateY(-2px);
+}
+
+/* Titles */
+.footer-frame .foot-category-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.footer-frame .title-bar {
+  width: 3px;
+  height: 14px;
+  background-color: #06b6d4;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #06b6d4;
+}
+
+/* Navigation Links */
+.footer-frame .foot-category-link {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-frame .foot-category-link a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.footer-frame .foot-category-link a:hover {
+  color: #06b6d4;
+  transform: translateX(4px);
+}
+
+/* Contact Details */
+.footer-frame .find-us-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-frame .find-us-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.footer-frame .find-us-icon {
+  font-size: 18px !important;
+  color: #06b6d4;
+}
+
+/* Divider & Copyright Bar */
+.footer-frame .footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  margin: 40px 0 24px 0;
+}
+
+.footer-frame .copyright-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-family: "JetBrains Mono", monospace;
+}
+
+@media (max-width: 600px) {
+  .footer-frame .copyright-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+.footer-frame .footer-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #10b981;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-frame .status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10b981;
+}

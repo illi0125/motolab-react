@@ -1,0 +1,151 @@
+/* Outer Section Container */
+.active-users-frame {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+  background-color: #07090e;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.active-users-frame .main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header & Telemetry Badging */
+.active-users-frame .category-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.active-users-frame .category-badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #06b6d4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.active-users-frame .category-badge-pill .pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #06b6d4;
+}
+
+.active-users-frame .category-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.active-users-frame .category-title .highlight-cyan {
+  background: linear-gradient(135deg, #06b6d4, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scoped Equal Card Grid Container */
+.active-users-frame .cards-frame {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Scoped Cyber User Card Styling */
+.active-users-frame .cyber-user-card {
+  height: 100% !important;
+  background-color: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease !important;
+}
+
+.active-users-frame .cyber-user-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.2) !important;
+}
+
+.active-users-frame .user-image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.active-users-frame .user-image-wrapper img {
+  transition: transform 0.5s ease !important;
+  object-fit: cover;
+}
+
+.active-users-frame .cyber-user-card:hover .user-image-wrapper img {
+  transform: scale(1.08);
+}
+
+/* Status Badge Tag */
+.active-users-frame .user-status-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: #10b981;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.active-users-frame .online-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10b981;
+}
+
+/* Member Nickname Box */
+.active-users-frame .user-detail-overflow {
+  background-color: #0d1117 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.active-users-frame .member-nickname {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+}
+
+/* No Data Placeholder */
+.active-users-frame .no-data {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: #8a8f9e;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
