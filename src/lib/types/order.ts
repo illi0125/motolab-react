@@ -1,5 +1,5 @@
 import { OrderStatus } from "../enums/order.enum";
-import { type Product } from "./motorcycle";
+import { type Motorcycle } from "./motorcycle";
 
 export interface OrderItemInput {
   itemQuantity: number;
@@ -28,7 +28,7 @@ export interface Order {
   updatedAt: Date;
   /** from aggregations **/
   orderItems: OrderItem[];
-  productData: Product[];
+  productData: Motorcycle[];
 }
 
 export interface OrderInquiry {
