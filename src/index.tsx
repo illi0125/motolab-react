@@ -10,17 +10,20 @@ import theme from "./app/MaterialTheme";
 import "./css/app.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import ContextProvider from "./app/context/ContextProvider";
+import { SocketProvider } from "./app/context/SocketContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <ContextProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Router>
-            <App />
-          </Router>
-        </ThemeProvider>
+        <SocketProvider>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Router>
+              <App />
+            </Router>
+          </ThemeProvider>
+        </SocketProvider>
       </ContextProvider>
     </Provider>
   </React.StrictMode>,
